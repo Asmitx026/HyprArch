@@ -2,19 +2,18 @@
 
 TARGET_FILE="$HOME/.config/hypr/hyprsource/monitors.conf"
 
-notify-send -i "display" "WARNING" "Toggle your primary display?" \
-  --action="yes=Confirm" \
-  --action="no=Cancel" \
+notify-send -i "display" "WARNING" "Toggle primary display?" \
+  --action="yes=Enable" \
+  --action="no=Disable" \
   | while read -r action; do
     case "$action" in
       yes)
-        awk -i inplace '!done && /eDP-1/ { 
-            if (/eDP-1, disable/) sub(/eDP-1, disable/, "eDP-1") 
-            else sub(/eDP-1/, "eDP-1, disable")
-            done = 1 
-        } 1' ~/.config/hypr/hyprsource/monitors.conf
+        sed -i 's/eDP-1, disable/eDP-1/g' $TARGET_FILE
+        shimejictl config set "MASCOT_SCALE" 0.75
         ;;
       no)
+        sed -i 's/eDP-1/eDP-1, disable/g' $TARGET_FILE
+        shimejictl config set "MASCOT_SCALE" 1.25
         ;;
     esac
   done
