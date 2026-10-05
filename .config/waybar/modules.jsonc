@@ -290,6 +290,7 @@
     ]
   },
 
+  // Disabled since the popups for other widgets are not working
   "custom/cpucat": {
     "exec":"~/.scripts/catloop.sh",
     "tooltip": true,

@@ -25,21 +25,20 @@
       "clock"
     ]
 },
-{
-    "name": "overlay",
-    "height": 45,
-    "width": 300,
-    "layer": "bottom",
-    "position": "bottom", 
-    "margin-bottom": -52,
-    "mode": "overlay",
-
-    "modules-center": ["custom/cava"],
-    "custom/cava": {
-        "format": "{}",
-        "exec": "~/.scripts/cava.sh"
-    }
-},
+// Disabled since the popups for other widgets are not working
+// {
+//     "name": "overlay",
+//     "height": 45,
+//     "layer": "bottom",
+//     "position": "bottom", 
+//     "margin-bottom": -52,
+//     "mode": "overlay",
+// 
+//     "modules-center": ["custom/cava"],
+//     "custom/cava": {
+//         "exec": "~/.scripts/cava.sh"
+//     }
+// },
 {
     "output":["eDP-1","HDMI-A-1"],
     "layer": "top",
@@ -49,8 +48,8 @@
     "include": ["~/.config/waybar/modules.jsonc"],
     "modules-left": [
       "custom/start",
-      "wlr/taskbar",
-      "custom/cpucat"
+      "wlr/taskbar"
+      // "custom/cpucat"
     ],
 
     "modules-center": [
