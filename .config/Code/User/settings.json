@@ -7,7 +7,7 @@
   "workbench.productIconTheme": "Tabler",
   "workbench.activityBar.location": "top",
   "workbench.navigationControl.enabled": false,
-  "workbench.browser.showInTitleBar": true,
+  "workbench.browser.showInTitleBar": false,
   "window.autoDetectColorScheme": true,
 
   /* Editor configuration */
@@ -26,7 +26,13 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+
   "workbench.list.smoothScrolling": true,
+  "workbench.tips.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.tree.renderIndentGuides": "none",
 
   /* Terminal configuration */
   "terminal.integrated.initialHint": false,
@@ -52,6 +58,7 @@
     "scminput": false,
     "jsonc": true,
     "json": true,
+    "latex": true,
   },
   "github.copilot.nextEditSuggestions.eagerness": "auto",
   "github.copilot.chat.anthropic.thinking.enabled": true,
@@ -96,6 +103,9 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "always",
-
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "compact",
+  "chat.titleBar.openInAgentsWindow.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
   /* Add more settings as needed */
 }
