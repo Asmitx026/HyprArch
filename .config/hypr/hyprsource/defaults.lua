@@ -1,0 +1,58 @@
+--[[
+     ___  ___________  __  ____ __________
+  / _ \/ __/ __/ _ |/ / / / //_  __/ __/
+ / // / _// _// __ / /_/ / /__/ / _\ \
+/____/___/_/ /_/ |_\____/____/_/ /___/
+--]]                                        
+
+
+
+hl.config({
+--  ┏┓┏┓  ┓ ┏┏┓┓┏┓ ┏┓┳┓┳┓
+--   ┃┃ ━━┃┃┃┣┫┗┫┃ ┣┫┃┃┃┃
+--  ┗┛┗┛  ┗┻┛┛┗┗┛┗┛┛┗┛┗┻┛
+    xwayland = {
+        force_zero_scaling = true
+    },
+
+--  ┳ ┳┓┏┓┳┳┏┳┓
+--  ┃ ┃┃┃┃┃┃ ┃
+--  ┻ ┛┗┣┛┗┛ ┻
+    input = {
+        kb_layout = "us",
+        kb_variant = "",
+        kb_model = "",
+        kb_options = "",
+        kb_rules = "",
+        sensitivity = 0,     -- No Modification
+        follow_mouse = 1,
+        -- scroll_method = edge,
+        natural_scroll = false
+    },
+
+--  ┏┓┏┳┓┓┏┏┓┳┓┏┓
+--  ┃┃ ┃ ┣┫┣ ┣┫┗┓
+--  ┗┛ ┻ ┛┗┗┛┛┗┗┛
+    dwindle = {
+        preserve_split = true
+    },
+
+    scrolling = {
+        follow_focus = true
+    },
+
+    misc = {
+        -- See https://wiki.hyprland.org/Configuring/Variables/ for more
+        disable_hyprland_logo = 1,
+        animate_manual_resizes = true,
+        animate_mouse_windowdragging = true,
+        focus_on_activate = 1,
+        allow_session_lock_restore = true,
+        middle_click_paste = true
+    },
+
+    debug = {
+        disable_logs = false,
+        disable_scale_checks = true
+    }
+})
