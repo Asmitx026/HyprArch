@@ -153,8 +153,9 @@ hl.bind(mainMod .. " + SHIFT + F",  hl.dsp.window.fullscreen({ mode = "maximized
 hl.bind(mainMod .. " + Space",      hl.dsp.window.center(), { description = "Center the active window" })
 
 -- Look up for a way to rotate the screen with lua. (Probably with hyprctl eval)
--- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("sed -i '/eDP-1/s/transform, 1/transform, 0/' ~/.config/hypr/hyprsource/monitors.conf"))
--- hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("sed -i '/eDP-1/s/transform, 0/transform, 1/' ~/.config/hypr/hyprsource/monitors.conf"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", transform = 0 })'"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", transform = 1 })'"))
+hl.bind(mainMod .. " + ALT + R", hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", transform = 2 })'"))
 
 
 --  ┏┓┏┓┏┓┳┳┏┓
