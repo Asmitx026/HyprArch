@@ -1,0 +1,57 @@
+#!/bin/bash
+
+num_of_monitors=$(hyprctl monitors all | grep -c Monitor)
+
+# Variables not working for some reason.. fix later!
+# INT_MONITOR="eDP-1" 
+# EXT_MONITOR="HDMI-A-1"
+
+if [[ "$1" == "extend" ]]; then
+    echo "[MANUAL: Extend] Enabling extend mode..."
+    hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = false, mirror = "" })'
+    hyprctl eval 'hl.monitor({ output = "HDMI-A-1", disabled = false })'
+    pkill -e shimeji-overlay
+    exit 0
+fi
+
+if [[ "$1" == "mirror" ]]; then
+    echo "[MANUAL: Mirror] Enabling mirror mode..."
+    hyprctl eval 'hl.monitor({ output = "HDMI-A-1", disabled = false })'
+    hyprctl eval 'hl.monitor({ output = "eDP-1", mirror = "HDMI-A-1", disabled = false })'
+    pkill -e shimeji-overlay
+    exit 0
+fi
+
+
+# NOTE: internal and external mode is buggy.. implement properly later when needed!
+# if [[ "$1" == "internal" ]]; then
+#     echo "[MANUAL: Internal] Disabling external monitor..."
+#     hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = false, mirror = "" })'
+#     hyprctl eval 'hl.monitor({ output = "HDMI-A-1", disabled = true })'
+#     shimejictl config set "MASCOT_SCALE" 0.75
+#     exit 0
+# fi
+# 
+# if [[ "$1" == "external" ]]; then
+#     if [[ $num_of_monitors -eq 1 ]]; then
+#         echo "[ERROR: External] Can't switch to external monitor since it's not connected!"
+#         exit 0
+#     fi
+#     echo "[MANUAL: External] Disabling internal monitor..."
+#     hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = true, mirror = "" })'
+#     hyprctl eval 'hl.monitor({ output = "HDMI-A-1", disabled = false })'
+#     shimejictl config set "MASCOT_SCALE" 1.25
+#     exit 0
+# fi
+
+
+# This portion is intended only for startup check whether monitor is connected or not:
+if [[ $num_of_monitors -gt 1 ]]; then
+    echo "[AUTO: HDMI Connected] External display detected. Disabling eDP..."
+    hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = true })'
+    shimejictl config set "MASCOT_SCALE" 1.25
+else
+    echo "[AUTO: HDMI Disconnected] No external display detected. Switching back to eDP..."
+    hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = false })'
+    shimejictl config set "MASCOT_SCALE" 0.75
+fi
