@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# BUILTIN_DISPLAY_NAME="eDP-1" # Hardcoded rn so don't need this variable for now
+
+if [[ "$1" == "extend" ]]; then
+    hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = true })'
+    shimejictl dismiss -a
+    exit 0
+fi
+
+num_of_monitors=$(hyprctl monitors all | grep -c Monitor)
+
+if [[ $num_of_monitors -gt 1 ]]; then
+    echo "[HDMI Connected] External display detected. Disabling eDP..."
+    hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = true })'
+    shimejictl config set "MASCOT_SCALE" 1.25
+else
+    echo "[HDMI Disconnected] No external display detected. Switching back to eDP..."
+    hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = false })'
+    shimejictl config set "MASCOT_SCALE" 0.75
+fi
