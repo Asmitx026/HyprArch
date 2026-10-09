@@ -33,7 +33,7 @@ fi
 HOME=/home/$(whoami)
 WALLPAPER="$(grep "wallpaper =" ~/.config/waypaper/config.ini | cut -d ' ' -f3)"
 WALLPAPER="${WALLPAPER/#\~/$HOME}"
-ENV_DIR="$HOME/.config/hypr/hyprsource/env_vars.conf"
+ENV_DIR="$HOME/.config/hypr/hyprsource/variables.lua"
 CONFIG_ULAUNCHER="$HOME/.config/ulauncher/settings.json"
 CONFIG_SNAPPY="$HOME/.config/snappy-switcher/config.ini"
 CONFIG_KVANTUM="$HOME/.config/Kvantum/kvantum.kvconfig"
@@ -115,7 +115,8 @@ if [[ "$MODE" == "dark" ]]; then
     SNAPPY_THEME="cyberpunk.ini"
     KVANTUM_THEME="WhiteSurDark"
     FOLDER_THEME="mocha"
-    VICINAE_THEME="pywal"
+    VICINAE_THEME="vicinae-dark"
+
 else
     GTK_THEME="WhiteSur-Light$accent"
     COLOR_SCHEME="prefer-light"
@@ -123,7 +124,7 @@ else
     SNAPPY_THEME="catppuccin-latte.ini"
     KVANTUM_THEME="WhiteSur"
     FOLDER_THEME="latte"
-    VICINAE_THEME="pywal"
+    VICINAE_THEME="vicinae-light"
 fi
 
 # Folder icon color determination
@@ -152,7 +153,7 @@ if [[ ! -f "$ENV_DIR" ]]; then
 else
     gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME" 2>/dev/null
     gsettings set org.gnome.desktop.interface color-scheme "$COLOR_SCHEME" 2>/dev/null
-    sed -i "s/\(env = GTK_THEME,\).*/\1$GTK_THEME/" "$ENV_DIR"
+    sed -i "s|hl.env(\"GTK_THEME\", \".*\")|hl.env(\"GTK_THEME\", \"$GTK_THEME\")|" $ENV_DIR
     export GTK_THEME="$GTK_THEME"
     echo "  GTK Theme switched to $GTK_THEME ($COLOR_SCHEME)"
 fi
