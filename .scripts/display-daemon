@@ -11,6 +11,7 @@ if [[ "$1" == "extend" ]]; then
     hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = false, mirror = "" })'
     hyprctl eval 'hl.monitor({ output = "HDMI-A-1", disabled = false })'
     pkill -e shimeji-overlay
+    echo "extend" > "$HOME/.scripts/display_status.txt"
     exit 0
 fi
 
@@ -19,6 +20,7 @@ if [[ "$1" == "mirror" ]]; then
     hyprctl eval 'hl.monitor({ output = "HDMI-A-1", disabled = false })'
     hyprctl eval 'hl.monitor({ output = "eDP-1", mirror = "HDMI-A-1", disabled = false })'
     pkill -e shimeji-overlay
+    echo "mirror" > "$HOME/.scripts/display_status.txt"
     exit 0
 fi
 
@@ -46,6 +48,7 @@ fi
 
 
 # This portion is intended only for startup check whether monitor is connected or not:
+echo "auto" > "$HOME/.scripts/display_status.txt"
 if [[ $num_of_monitors -gt 1 ]]; then
     echo "[AUTO: HDMI Connected] External display detected. Disabling eDP..."
     hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = true })'

@@ -37,6 +37,7 @@ ENV_DIR="$HOME/.config/hypr/hyprsource/variables.lua"
 CONFIG_ULAUNCHER="$HOME/.config/ulauncher/settings.json"
 CONFIG_SNAPPY="$HOME/.config/snappy-switcher/config.ini"
 CONFIG_KVANTUM="$HOME/.config/Kvantum/kvantum.kvconfig"
+DDMON_STATUS=$(<"$HOME/.scripts/display_status.txt")
 
 echo "Switching to $MODE mode..."
 
@@ -204,6 +205,18 @@ if command -v swaync &> /dev/null; then
     echo "  Swaync refreshed to apply new theme colors"
 else
     echo "ERROR: Swaync is not installed. Skipping swaync theme refresh."
+fi
+
+# Re-applying last monitor status
+echo ""
+echo "Recent monitor status: $DDMON_STATUS"
+
+if [[ "$DDMON_STATUS" == "extend" ]]; then
+    $HOME/.scripts/display-daemon extend
+elif [[ "$DDMON_STATUS" == "mirror" ]]; then
+    $HOME/.scripts/display-daemon mirror
+else
+    $HOME/.scripts/display-daemon
 fi
 
 # Send notification
