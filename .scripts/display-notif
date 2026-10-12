@@ -7,13 +7,13 @@ notify-send -i "display" "Display Management" "You sure abt dis?" \
     | while read -r action; do
         case "$action" in
             extend)
-                display-daemon extend
+                ~/.scripts/display-daemon extend
                 ;;
             mirror)
-                display-daemon mirror 
+                ~/.scripts/display-daemon mirror 
                 ;;
             auto)
-                display-daemon
+                ~/.scripts/display-daemon
                 ;;
         esac
     done
