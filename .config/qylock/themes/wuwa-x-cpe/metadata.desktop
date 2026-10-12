@@ -1,6 +1,6 @@
 [SddmGreeterTheme]
-Name=clockwork-tape
-Description=Tape - Clockwork
+Name=R1999_2
+Description=Reverse 1999 Qylock Theme
 Author=Darkkal44
 Type=sddm-theme
 MainScript=Main.qml
