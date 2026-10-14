@@ -77,6 +77,7 @@ tooltip label {
 #pulseaudio,
 #network,
 #bluetooth,
+#custom-ddc-control,
 #backlight {
     padding: 0px 9px;
     color: lighter(@main-color);

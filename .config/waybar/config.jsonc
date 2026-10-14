@@ -20,6 +20,7 @@
       "network",
       "bluetooth",
       "backlight",
+      "custom/ddc-control",
       "pulseaudio",
       "group/power",
       "clock"
