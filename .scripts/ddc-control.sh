@@ -12,7 +12,7 @@ CONTRAST_VCP=12
 MODE="brightness"
 VCP=$BRIGHTNESS_VCP
 ICON="󰳲"
-LABEL="HDMI-A-1 Brightness"
+LABEL="HDMI Brightness"
 
 ddcutil_fast() {
     ddcutil --noverify --sleep-multiplier .01 "$@" 2>/dev/null
@@ -32,21 +32,19 @@ print_value() {
     fi
     
     # JSON output for Waybar
-    if [ "$VALUE" != "-1" ]; then
-        echo "{\"text\": \"$ICON ${VALUE}%\", \"tooltip\": \"$LABEL: ${VALUE}%\"}"
-    else
-        echo "{\"text\": \"$ICON Disconnected\", \"tooltip\": \"HDMI not connected\"}"
-    fi
+    echo "{\"text\": \"$ICON ${VALUE}%\", \"tooltip\": \"$LABEL: ${VALUE}%\"}"
 }
 
 # Check if any DDC monitors are available
+# INFO: Checks if invalid display is present and if no. of displays are one, which concludes that only eDP is present
+if ddcutil detect --brief 2>&1 | grep -q 'Invalid display' && [ "$(ddcutil detect --brief 2>&1 | grep -c 'Monitor:')" -eq 1 ]; then
+    exit 0
+fi
+
 if ! command -v ddcutil &> /dev/null; then
     exit 0
 fi
 
-if ! ddcutil detect --brief &> /dev/null; then
-    exit 0
-fi
 
 # Clear and create the pipe
 rm -rf "$RECEIVE_PIPE"
