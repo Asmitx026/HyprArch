@@ -116,7 +116,7 @@ if [[ "$MODE" == "dark" ]]; then
     SNAPPY_THEME="cyberpunk.ini"
     KVANTUM_THEME="WhiteSurDark"
     FOLDER_THEME="mocha"
-    VICINAE_THEME="vicinae-dark"
+    VICINAE_THEME="pywal"
 
 else
     GTK_THEME="WhiteSur-Light$accent"
@@ -125,7 +125,7 @@ else
     SNAPPY_THEME="catppuccin-latte.ini"
     KVANTUM_THEME="WhiteSur"
     FOLDER_THEME="latte"
-    VICINAE_THEME="vicinae-light"
+    VICINAE_THEME="pywal"
 fi
 
 # Folder icon color determination

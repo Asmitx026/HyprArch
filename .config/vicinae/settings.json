@@ -10,7 +10,10 @@
 
 {
    "$schema": "https://vicinae.com/schemas/config.json",
+   "close_on_focus_loss": false,
    "pop_to_root_on_close": true,
+   "wrap_navigation": false,
+   "encrypt_sensitive_data": true,
    "keybinding": "default",
    "font": {
       "rendering": "native",
@@ -29,10 +32,19 @@
       "system_info": false
    },
    "launcher_window": {
-      "opacity": 0.8,
+      "rounding": 10,
+      "opacity": 1,
       "client_side_decorations": {
-         "enabled": true
-      }
+         "enabled": false,
+         "border_width": 2
+      },
+      "compact_mode": {
+         "enabled": false
+      },
+      "layer_shell": {
+         "enabled": false
+      },
+      "material": "blur"
    },
    "favorites": [
       "@rithvikvibhu/store.vicinae.arch-packages:search-arch-packages",
@@ -117,6 +129,9 @@
          }
       },
       "@dagimg-dot/store.vicinae.wifi-commander": {
+         "preferences": {
+            "network-cli-tool": "nmcli"
+         },
          "entrypoints": {
             "restart-wifi": {
                "enabled": false
@@ -134,6 +149,13 @@
       },
       "@knoopx/store.vicinae.systemd": {
          "enabled": true
+      },
+      "@rithvikvibhu/store.vicinae.arch-packages": {
+         "entrypoints": {
+            "search-arch-packages": {
+               "alias": "aur"
+            }
+         }
       },
       "applications": {
          "entrypoints": {
@@ -259,6 +281,14 @@
          }
       },
       "clipboard": {
+         "preferences": {
+            "monitoring": true,
+            "ignorePasswords": true,
+            "preserveTagged": true,
+            "ignoredApps": [],
+            "evictionThreshold": "2592000",
+            "eraseOnStartup": false
+         },
          "entrypoints": {
             "clear": {
                "enabled": false
