@@ -101,6 +101,7 @@ hl.on("hyprland.start", function()
 --  ┃┃ ┃ ┣┫┣ ┣┫┗┓
 --  ┗┛ ┻ ┛┗┗┛┛┗┗┛
 --  WARN: Currently not required.
+    hl.exec_cmd("$HOME/.scripts/display-daemon")
     hl.exec_cmd("dbus-update-activation-environment --systemd HYPRLAND_INSTANCE_SIGNATURE")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("dbus-update-activation-environment --systemd --all")

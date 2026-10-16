@@ -22,3 +22,4 @@ require("hyprsource.windows") -- DONE
 -- [DONE] Add ALT-TAB functionality
 -- [DONE] Transformed the config to lua
 -- [PENDING] Fix and implement the plugin system (currently not working)
+-- [PENDING] Create script to switch between Mirror and Extend and only External or Internal display
