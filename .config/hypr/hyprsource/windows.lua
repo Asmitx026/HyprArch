@@ -56,6 +56,18 @@ hl.window_rule({
     },
 })
 
+-- NOTE: Locks at landscape mode once the window is resized - close using keybind and reopen from the tray to fix this issue
+hl.window_rule({
+    name = "bitchord",
+    float = true,
+    animation = "slide right",
+    move = { "(monitor_w - window_w - 34) + 266", 70 }, -- the value `266` is added due to the forced landscape size stays internally but visually its portrait when launched initially.
+    size = { 517, "monitor_h - 142" },
+    match = {
+        class = "com-music-bitchord-desktop-MainKt",
+    },
+})
+
 --  ┏┓┏┓┏┓┓┏ ┏┓┏┓┏┓┏┓┏┓┏┳┓┏┓
 --  ┣ ┣┫┗┓┗┫ ┣ ┣ ┣ ┣ ┃  ┃ ┗┓
 --  ┗┛┛┗┗┛┗┛ ┗┛┻ ┻ ┗┛┗┛ ┻ ┗┛
@@ -64,8 +76,9 @@ hl.window_rule({
     name = "easyeffects",
     float = true,
     animation = "slide left",
-    move = { 24, 60 },
-    size = { 1076, 817 },
+    move = { 34, 70 },
+--    size = { 1048, 798 },
+    size = { "(monitor_w)/2 + 212", "monitor_h - 142" },
     match = {
         class = "com.github.wwmm.easyeffects",
     },
@@ -87,13 +100,15 @@ hl.window_rule({
     },
 })
 
---  INFO: Rules for ulauncher [WORKING]
+--  INFO: Rules for vicinae [WORKING]
 hl.window_rule({
     name = "vicinae",
     float = true,
     pin = true,
-    animation = "gnomed",
     stay_focused = true,
+--    move = { "(monitor_w - window_w) - 34", 70 }, -- at the top-right corner (centre looks better imo)
+    move = { "(monitor_w - window_w)/2", 70 },
+    animation = "slide top",
     match = {
         class = "vicinae",
     },
@@ -108,7 +123,7 @@ hl.window_rule({
     name = "xdg-desktop-portal-gtk",
     float = true,
     center = true,
-    size = { 1120, 650 },
+    size = { "(montor_w * 0.5)", "monitor_h - 200" },
     match = {
         class = "xdg-desktop-portal-gtk",
     },
@@ -124,7 +139,7 @@ hl.window_rule({
     name = "nautilus",
     pseudo = true,
     center = true,
-    size = { 1120, 650 },
+    size = { "(montor_w * 0.5) - 100", "monitor_h - 200" },
     match = {
         class = "org.gnome.Nautilus",
         workspace = "w[t0]",
@@ -164,8 +179,7 @@ hl.window_rule({
 hl.window_rule({
     name = "waypaper",
     float = true,
-    move = { 827, 277 },
-    size = { 820, 600 },
+    move = { "(monitor_w - window_w) - 34", "(monitor_h - window_h) - 70" },
     animation = "slide right",
     match = {
         class = "waypaper",
@@ -194,24 +208,10 @@ hl.window_rule({
     name = "foliate",
     pseudo = true,
     center = true,
-    size = { 1068, 768 },
+    size = { "(montor_w * 0.5) - 100", "monitor_h - 200" },
     match = {
         class = "com.github.johnfactotum.Foliate",
-    },
-})
-
-
---  ┏┓┏┓┓ ┏┓┳┓┳┳┳┳┓
---  ┗┓┃┃┃ ┣┫┃┃┃┃┃┃┃
---  ┗┛┗┛┗┛┛┗┛┗┗┛┛ ┗
---  INFO: Rules for Solanum (GNOME Pomodoro) [WORKING]
-hl.window_rule({
-    name = "solanum",
-    pseudo = true,
-    center = true,
-    size = { 1100, 808 },
-    match = {
-        class = "org.gnome.Solanum",
+        workspace = "w[t0]",
     },
 })
 
@@ -299,16 +299,6 @@ hl.layer_rule({
     animation = "slide right",
     match = {
         namespace = "swaync-control-center",
-    },
-})
-
-hl.layer_rule({
-    name = "swaync-notification-window",
-    blur = true,
-    ignore_alpha = 0.5,
-    animation = "slide right",
-    match = {
-        namespace = "swaync-notification-window",
     },
 })
 
