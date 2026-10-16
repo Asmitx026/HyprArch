@@ -17,20 +17,6 @@ local mainMod = "SUPER"
 --  ┃┃┃┃ ┃ ┃┣ ┗┫ ┃┃┃┃┃┃┃┗┓
 --  ┛┗┗┛ ┻ ┻┻ ┗┛ ┛ ┗┗┛┻┛┗┛
 -- Aliases for notify-send after starting any app
-local notifexec = "notify-send -i 'app' 'Fist my bump!'"
-local notifexecterm = "notify-send -i 'alacritty' 'Fist my bump!'" 
-local notifexecfiles = "notify-send -i 'nautilus' 'Fist my bump!'" 
-local notifexeccode = "notify-send -i 'vscode' 'Fist my bump!'" 
-local notifexecsmile = "notify-send -i 'ksmiletris' 'Fist my bump!'" 
-local notifexecwall = "notify-send -i 'wallpaper' 'Fist my bump!'" 
-local notifexecdock = "notify-send -i 'dock' 'Fist my bump!'" 
-local notifexeclock = "notify-send -i 'lock' 'Fist my bump!'" 
-local notifexecmedia = "notify-send -i 'multimedia-video-player' 'Fist my bump!'" 
-local notifexecread = "notify-send -i 'synaptic' 'Fist my bump!'" 
-local notifexecnotion = "notify-send -i 'notepad' 'Fist my bump!'" 
-local notifexecclip = "notify-send -i 'xclipboard' 'Fist my bump!'" 
-local notifexeclaunch = "notify-send -i 'ulauncher' 'Fist my bump!'" 
-local notifexecstar = "notify-send -i 'staruml' 'Fist my bump!'" 
 
 
 --  ┏┓┏┓┏┓┏┓
@@ -38,53 +24,55 @@ local notifexecstar = "notify-send -i 'staruml' 'Fist my bump!'"
 --  ┛┗┣┛┣┛┗┛
 -- Execute your favourite apps using mainMod + [key]
 hl.bind(mainMod .. " + Q", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecterm .. 'Launching Alacritty'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'alacritty' 'Fist my bump!' 'Launching Alacritty'"))
     hl.dispatch(hl.dsp.exec_cmd('alacritty'))
 end)
 hl.bind(mainMod .. " + A", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecfiles .. 'Launching Files'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'nautilus' 'Fist my bump!' 'Launching Files'"))
     hl.dispatch(hl.dsp.exec_cmd('nautilus'))
 end)
 hl.bind(mainMod .. " + Z", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexeccode .. 'Launching VSCode'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'vscode' 'Fist my bump!' 'Launching VSCode'"))
     hl.dispatch(hl.dsp.exec_cmd('code'))
 end)
 hl.bind(mainMod .. " + period", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecsmile .. 'Doodling up fellas!'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'ksmiletris' 'Fist my bump!' 'Doodling up fellas!'"))
     hl.dispatch(hl.dsp.exec_cmd('vicinae vicinae://launch/core/search-emojis'))
 end)
 
 hl.bind(mainMod .. " + W", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecwall .. 'Switching wallpapers eh?'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'wallpaper' 'Fist my bump!' 'Switching wallpapers, eh?'"))
     hl.dispatch(hl.dsp.exec_cmd('waypaper'))
 end)
 hl.bind(mainMod .. " + SHIFT + W", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecwall .. 'Restoring Waypaper'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'wallpaper' 'Fist my bump!' 'Restoring Waypaper'"))
     hl.dispatch(hl.dsp.exec_cmd('waypaper --restore --no-post-command'))
 end)
 hl.bind(mainMod .. " + S", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecwall .. 'Trigerring failsafe'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'wallpaper' 'Fist my bump!' 'Trigerring failsafe'"))
     hl.dispatch(hl.dsp.exec_cmd('awww img .walls/mac-os/macos-sequoia.jpg'))
 end)
 
--- hl.bind(mainMod .. " + W", function()
---     hl.dispatch(hl.dsp.exec_cmd(notifexecwall .. 'Switching wallpapers eh?'))
---     hl.dispatch(hl.dsp.exec_cmd('awww img $(find ~/.walls/ -type f | vicinae dmenu -p "Pick a wallpaper...")'))
---     hl.dispatch(hl.dsp.exec_cmd('zsh ~/.scripts/wal-notify'))
--- end)
+--[[
+hl.bind(mainMod .. " + W", function()
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'wallpaper' 'Fist my bump!' 'Switching wallpapers eh?'"))
+    hl.dispatch(hl.dsp.exec_cmd('awww img $(find ~/.walls/ -type f | vicinae dmenu -p "Pick a wallpaper...")'))
+    hl.dispatch(hl.dsp.exec_cmd('zsh ~/.scripts/wal-notify'))
+end)
+--]]
 
 hl.bind(mainMod .. " + E", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecread .. 'Enabling Reading Mode'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'synaptic' 'Fist my bump!' 'Enabling Reading Mode'"))
     hl.dispatch(hl.dsp.exec_cmd('wlsunset -t 5400 -T 5500'))
 end)
 hl.bind(mainMod .. " + SHIFT + E", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecread .. 'Disabling Reading Mode'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'synaptic' 'Fist my bump!' 'Disabling Reading Mode'"))
     hl.dispatch(hl.dsp.exec_cmd('pkill wlsunset'))
 end)
 
 hl.bind(mainMod .. " + ALT + W", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecdock .. 'Restarting Waybar'))
-    hl.dispatch(hl.dsp.exec_cmd('pkill -SIGUSR2 waybar'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'dock' 'Fist my bump!' 'Launching Waybar'"))
+    hl.dispatch(hl.dsp.exec_cmd('waybar'))
 end)
 
 
@@ -93,27 +81,27 @@ end)
 --  ┗┛┛┗┻┛ ┗┗┛┗┛┻
 -- WARN: Shimeji keybinds are a bit buggy.
 hl.bind(mainMod .. " + ALT + 1", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecstar .. 'Summoning Neuron'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'staruml' 'Fist my bump!' 'Summoning Neuron'"))
     hl.dispatch(hl.dsp.exec_cmd('shimejictl mascot summon "Neuron"'))
 end)
 hl.bind(mainMod .. " + ALT + 2", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecstar .. 'Summoning Weuron'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'staruml' 'Fist my bump!' 'Summoning Weuron'"))
     hl.dispatch(hl.dsp.exec_cmd('shimejictl mascot summon "Weuron"'))
 end)
 hl.bind(mainMod .. " + ALT + 3", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecstar .. 'Summoning Eviling'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'staruml' 'Fist my bump!' 'Summoning Eviling'"))
     hl.dispatch(hl.dsp.exec_cmd('shimejictl mascot summon "Eviling"'))
 end)
 hl.bind(mainMod .. " + ALT + 4", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecstar .. 'Summoning Miku'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'staruml' 'Fist my bump!' 'Summoning Miku'"))
     hl.dispatch(hl.dsp.exec_cmd('shimejictl mascot summon "miku"'))
 end)
 hl.bind(mainMod .. " + Delete", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecstar .. 'Click to dismiss a Shimeji'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'staruml' 'Fist my bump!' 'Click to dismiss a Shimeji'"))
     hl.dispatch(hl.dsp.exec_cmd('shimejictl dismiss'))
 end)
 hl.bind(mainMod .. " + SHIFT + Delete", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecstar .. 'Click to dismiss all shimejis'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'staruml' 'Fist my bump!' 'Click to dismiss all shimejis'"))
     hl.dispatch(hl.dsp.exec_cmd('shimejictl dismiss -a'))
 end)
 
@@ -132,10 +120,11 @@ end)
 hl.bind(mainMod .. " + K",          hl.dsp.window.close(), { description = "Close active window" })
 hl.bind(mainMod .. " + SHIFT + M",  hl.dsp.exec_cmd('systemctl poweroff'), { description = "Power off the system" })
 hl.bind(mainMod .. " + M",          hl.dsp.exec_cmd('hyprshutdown'), { description = "Shutdown Hyprland" })
-hl.bind(mainMod .. " + D",          hl.dsp.exec_cmd('zsh ~/.scripts/disable-eDP'), { description = "Disable eDP monitor" })
+hl.bind(mainMod .. " + D",          hl.dsp.exec_cmd('zsh ~/.scripts/display-notif'), { description = "Display Management notification" })
+hl.bind(mainMod .. " + SHIFT + D",          hl.dsp.exec_cmd('zsh ~/.scripts/display-daemon'), { description = "Display Management (AUTO)" })
 
 hl.bind(mainMod .. " + L", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexeclock .. 'Initiating Lock'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'lock' 'Fist my bump!' 'Initiating Lock'"))
     hl.dispatch(hl.dsp.exec_cmd('loginctl lock-session'))
 end)
 
@@ -238,19 +227,19 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd('swayosd-client --output-volume mute-to
 
 -- NOTE: The next 4 commands requires playerctl.
 hl.bind("XF86AudioPlay", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecmedia .. 'Toggling play/pause media'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'multimedia-video-player' 'Fist my bump!' 'Toggling play/pause media'"))
     hl.dispatch(hl.dsp.exec_cmd('playerctl play-pause'), { description = "Play/Pause media", locked = true })
 end)
 hl.bind("XF86AudioPrev", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecmedia .. 'Toggling previous media'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'multimedia-video-player' 'Fist my bump!' 'Toggling previous media'"))
     hl.dispatch(hl.dsp.exec_cmd('playerctl previous'), { description = "Previous media", locked = true })
 end)
 hl.bind("XF86AudioNext", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecmedia .. 'Toggling next media'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'multimedia-video-player' 'Fist my bump!' 'Toggling next media'"))
     hl.dispatch(hl.dsp.exec_cmd('playerctl next'), { description = "Next media", locked = true })
 end)
 hl.bind("XF86AudioStop", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecmedia .. 'Toggling stop media'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'multimedia-video-player' 'Fist my bump!' 'Toggling stop media'"))
     hl.dispatch(hl.dsp.exec_cmd('playerctl stop'), { description = "Stop media", locked = true })
 end)
 
@@ -264,7 +253,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd('swayosd-client --brightness -2
 --  ┗┗┻┗┻┛┗┗┛┗┗ ┛
 -- Start your favourite app-launcher using mainMod
 hl.bind(mainMod .. " + U", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexeclaunch .. 'Bringing up Ulauncher'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'ulauncher' 'Fist my bump!' 'Bringing up Ulauncher'"))
     hl.dispatch(hl.dsp.exec_cmd('ulauncher --no-window-shadow'))
 end)
 -- Use {locked = true} for ulauncher if it doesn't work properly.
@@ -285,9 +274,9 @@ hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd('slurp | grim -g - - | tee ~/Pict
 --  ┃ ┃ ┃┃┃┣┫┃┃┣┫┣┫┃┃
 --  ┗┛┗┛┻┣┛┻┛┗┛┛┗┛┗┻┛
 -- WARNING: Need to configure later!
--- bind = $mainMod, V, exec, $notifexecclip 'Bringing up clipboard'; nwg-clipman
+-- bind = $mainMod, V, exec, notify-send -i 'xclipboard' 'Fist my bump!' 'Bringing up clipboard'; nwg-clipman
 hl.bind(mainMod .. " + V", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexecclip .. 'Bringing up clipboard'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'xclipboard' 'Fist my bump!' 'Bringing up clipboard'"))
     hl.dispatch(hl.dsp.exec_cmd('vicinae vicinae://launch/clipboard/history'), { description = "View clipboard history"})
 end)
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd('cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy'))
@@ -298,31 +287,31 @@ hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd('cliphist list | fuzzel --dme
 --  ┗┛┛┗┛┗┻┛┗┛┛┗┗┛
 -- Shader toggle keybindings
 hl.bind(mainMod .. " + SHIFT + F1", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexec .. 'Enabled AMOLED shader'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'app' 'Fist my bump!' 'Enabled AMOLED shader'"))
     hl.dispatch(hl.dsp.exec_cmd('hyprshade on amoled'))
 end)
 hl.bind(mainMod .. " + SHIFT + F2", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexec .. 'Enabled Retro shader'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'app' 'Fist my bump!' 'Enabled Retro shader'"))
     hl.dispatch(hl.dsp.exec_cmd('hyprshade on retro'))
 end)
 hl.bind(mainMod .. " + SHIFT + F3", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexec .. 'Enabled CyberPunk shader'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'app' 'Fist my bump!' 'Enabled CyberPunk shader'"))
     hl.dispatch(hl.dsp.exec_cmd('hyprshade on cyberpunk'))
 end)
 hl.bind(mainMod .. " + SHIFT + F4", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexec .. 'Enabled Matrix shader'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'app' 'Fist my bump!' 'Enabled Matrix shader'"))
     hl.dispatch(hl.dsp.exec_cmd('hyprshade on matrix'))
 end)
 hl.bind(mainMod .. " + SHIFT + F5", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexec .. 'Enabled Reading Mode shader'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'app' 'Fist my bump!' 'Enabled Reading Mode shader'"))
     hl.dispatch(hl.dsp.exec_cmd('hyprshade on blue-light-filter'))
 end)
 hl.bind(mainMod .. " + SHIFT + F11", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexec .. 'Enabled Vibrance shader'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'app' 'Fist my bump!' 'Enabled Vibrance shader'"))
     hl.dispatch(hl.dsp.exec_cmd('hyprshade on vibrance'))
 end)
 -- Turn off any active shader
 hl.bind(mainMod .. " + SHIFT + F12", function()
-    hl.dispatch(hl.dsp.exec_cmd(notifexec .. 'Disabled HyprShade'))
+    hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'app' 'Fist my bump!' 'Disabled HyprShade'"))
     hl.dispatch(hl.dsp.exec_cmd('hyprshade off'))
 end)
