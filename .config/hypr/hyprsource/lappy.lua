@@ -51,8 +51,7 @@ hl.config({
 --  ┗┛┗┛┗┛ ┻ ┗┛┛┗┗┛┗┛
 hl.gesture({ fingers = 3, direction = "vertical", action = "workspace" })
 
-hl.gesture({ fingers = 3, direction = "up", mods = "SUPER", action = "fullscreen", mode = "maximize" })
-hl.gesture({ fingers = 3, direction = "down", mods = "SUPER", action = "close" })
+hl.gesture({ fingers = 3, direction = "up", mods = "SUPER", action = "fullscreen", mode = "fullscreen" })
 
 hl.gesture({ fingers = 3, direction = "left", mods = "SUPER", action = "float", mode = "tile" })
 hl.gesture({ fingers = 3, direction = "right", mods = "SUPER", action = "float", mode = "float" })

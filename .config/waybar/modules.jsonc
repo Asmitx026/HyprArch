@@ -43,7 +43,8 @@
     "tooltip": true,
     "interval": 43200, // 12 hours
     "exec": "~/.scripts/check-updates.sh",
-    "return-type": "json"
+    "return-type": "json",
+    "on-click": "vicinae vicinae://launch/@rithvikvibhu/store.vicinae.arch-packages/search-arch-packages"
   },
   
   "hyprland/workspaces": {
@@ -157,8 +158,8 @@
 	"tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
     "tooltip-format-ethernet": " {ifname}: {ipaddr} | {frequency} MHz{icon} ",
     "tooltip-format-disconnected": "⚠ Disconnected.",
-    "on-click": "notify-send -i 'networkmanager' 'Network Manager' 'Searching for networks'; vicinae vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/scan-wifi",
-    "on-click-right": "notify-send -i 'networkmanager' 'Network Manager' 'Restarting Wi-Fi'; vicinae vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/restart-wifi",
+    "on-click": "vicinae vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/scan-wifi",
+    "on-click-right": "vicinae vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/restart-wifi",
     "on-click-middle": "alacritty -e 'nmtui'"
   },
 
@@ -173,8 +174,8 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "notify-send -i 'bluetooth' 'Bluetooth Manager' 'Listing paired devices'; vicinae vicinae://launch/@Gelei/store.vicinae.bluetooth/devices",
-    "on-click-right": "notify-send -i 'bluetooth' 'Bluetooth Manager' 'Searching for devices'; vicinae vicinae://launch/@Gelei/store.vicinae.bluetooth/scan",
+    "on-click": "vicinae vicinae://launch/@Gelei/store.vicinae.bluetooth/devices",
+    "on-click-right": "vicinae vicinae://launch/@Gelei/store.vicinae.bluetooth/scan",
     "on-click-middle": "blueman-manager"
   },
 
@@ -198,7 +199,7 @@
    	"format-icons": {
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol",
+    "on-click": "vicinae vicinae://launch/@rastsislaux/store.vicinae.pulseaudio/outputDevices",
     "on-click-middle": "playerctl play-pause",
     "on-click-right": "notify-send -i 'mediacontrol' 'Fist my bump!' 'Launching easyeffects in background'; easyeffects --gapplication-service",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
@@ -302,6 +303,7 @@
     "ignore-list": [
         "ulauncher",
         "hyprlock",
+        "vicinae",
     ]
   },
 

@@ -7,4 +7,4 @@
     ```
 
 > [!NOTE]
-> Remember to update vicinae using `vicinae theme set matugen` to apply the theme.
+> Remember to update vicinae using `vicinae theme set pywal` to apply the theme.

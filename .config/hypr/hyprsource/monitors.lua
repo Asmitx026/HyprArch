@@ -12,7 +12,8 @@
 -- ACER 14.1 IPS Panel (laptop_screen)
 hl.monitor({
     output    = "eDP-1",
-    disabled  = true,
+    -- mirror    = "HDMI-A-1",
+    disabled  = false,
     mode      = "highres",
     position  = "auto",
     scale     = "1.15",
@@ -25,7 +26,6 @@ hl.monitor({
 -- WARN: Bit-depth doesn't works on external monitors (HDMI-A-1) for some reason
 hl.monitor({
     output    = "HDMI-A-1",
-    -- mirror    = "eDP-1", -- use when the bigger desk is ready for dual-monitor setup
     disabled  = false,
     mode      = "highres",
     position  = "auto",
