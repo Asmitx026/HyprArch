@@ -125,7 +125,7 @@ hl.bind(mainMod .. " + SHIFT + D",          hl.dsp.exec_cmd('zsh ~/.scripts/disp
 
 hl.bind(mainMod .. " + L", function()
     hl.dispatch(hl.dsp.exec_cmd("notify-send -i 'lock' 'Fist my bump!' 'Initiating Lock'"))
-    hl.dispatch(hl.dsp.exec_cmd('loginctl lock-session'))
+    hl.dispatch(hl.dsp.exec_cmd('zsh ~/.config/qy-sddm/lock.sh'))
 end)
 
 

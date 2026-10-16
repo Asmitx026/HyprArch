@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # Set directories and theme
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+SCRIPT_DIR="$HOME/.config/qy-sddm"
 THEMES_DIR="$SCRIPT_DIR/themes"
 SYSTEM_THEMES_DIR="/usr/share/sddm/themes"
 SDDM_CONF_DIR="/etc/sddm.conf.d"

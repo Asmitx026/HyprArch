@@ -30,7 +30,6 @@ if [[ "$MODE" != "light" && "$MODE" != "dark" ]]; then
 fi
 
 # Declare directory variables
-HOME=/home/$(whoami)
 WALLPAPER="$(grep "wallpaper =" ~/.config/waypaper/config.ini | cut -d ' ' -f3)"
 WALLPAPER="${WALLPAPER/#\~/$HOME}"
 ENV_DIR="$HOME/.config/hypr/hyprsource/variables.lua"
