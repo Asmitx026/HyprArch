@@ -3,7 +3,7 @@
 # Set session type and themes
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export XDG_SESSION_TYPE="wayland"
-export QS_THEME="f1-livery"
+export QS_THEME="wuwa-x-cpe"
 export QS_THEME_PATH="$DIR/themes/$QS_THEME"
 
 # Set library paths

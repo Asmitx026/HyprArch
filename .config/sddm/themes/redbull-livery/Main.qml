@@ -141,10 +141,22 @@ Item {
                 }
             }
             Text {
-                text: "START"; font.family: titleFont.name; font.pixelSize: 28 * s; font.letterSpacing: 14 * s; color: root.fg
+                text: "START"; font.family: titleFont.name; font.pixelSize: 28 * s
+                font.letterSpacing: startMa.containsMouse ? 16 * s : 14 * s
+                color: startMa.containsMouse ? root.red : root.fg
                 anchors.centerIn: parent; layer.enabled: true; layer.effect: DropShadow { color: "#aa000000"; radius: 12 }
+                Behavior on color { ColorAnimation { duration: 300 } }
+                Behavior on font.letterSpacing { NumberAnimation { duration: 450; easing.type: Easing.OutQuart } }
             }
-            MouseArea { id: startMa; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: root.startInteraction() }
+            MouseArea {
+                id: startMa
+                anchors.centerIn: parent
+                width: 350 * s
+                height: 100 * s
+                hoverEnabled: true
+                cursorShape: Qt.PointingHandCursor
+                onClicked: root.startInteraction()
+            }
         }
 
         Item {
