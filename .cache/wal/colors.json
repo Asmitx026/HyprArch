@@ -1,29 +1,29 @@
 {
-    "checksum": "c0ba329875bff3d5d42157c795f44695",
-    "wallpaper": "/home/Asmit/.walls/kawaii-anime/your-lie.jpg",
+    "checksum": "8443d500ab1fb0ba4cfa3f1a3fa07e81",
+    "wallpaper": "/home/Nearl/.walls/ghibli-2.0/kiki-and-friends.jpg",
     "alpha": "100",
 
     "special": {
-        "background": "#0a0d0e",
-        "foreground": "#c1c2c2",
-        "cursor": "#c1c2c2"
+        "background": "#1e0c16",
+        "foreground": "#c6c2c4",
+        "cursor": "#c6c2c4"
     },
     "colors": {
-        "color0": "#0a0d0e",
-        "color1": "#294A51",
-        "color2": "#36656E",
-        "color3": "#506667",
-        "color4": "#80765D",
-        "color5": "#3F7687",
-        "color6": "#549E98",
-        "color7": "#c1c2c2",
-        "color8": "#56636a",
-        "color9": "#294A51",
-        "color10": "#36656E",
-        "color11": "#506667",
-        "color12": "#80765D",
-        "color13": "#3F7687",
-        "color14": "#549E98",
-        "color15": "#c1c2c2"
+        "color0": "#1e0c16",
+        "color1": "#C7966E",
+        "color2": "#47569B",
+        "color3": "#718BA3",
+        "color4": "#6097DF",
+        "color5": "#BAB8B2",
+        "color6": "#E0A291",
+        "color7": "#c6c2c4",
+        "color8": "#705c67",
+        "color9": "#C7966E",
+        "color10": "#47569B",
+        "color11": "#718BA3",
+        "color12": "#6097DF",
+        "color13": "#BAB8B2",
+        "color14": "#E0A291",
+        "color15": "#c6c2c4"
     }
 }

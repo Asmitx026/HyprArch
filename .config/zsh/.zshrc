@@ -50,3 +50,7 @@ alias help=run-help
 cls
 
 
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"

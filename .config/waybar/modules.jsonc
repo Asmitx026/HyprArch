@@ -348,7 +348,7 @@
     },
     "critical-threshold": 85,
     "interval": 20,
-    "on-click": "alacritty -e top"
+    "on-click": "alacritty -e htop"
   },
 
   "cpu": {
@@ -381,7 +381,7 @@
     "interval": 3600,
     "return-type": "json",
     "on-click": "gnome-weather",
-    "on-click-right": "solanum"
+    "on-click-right": "alacritty -e flow"
   },
   
   "group/control-center": {

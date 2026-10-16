@@ -20,7 +20,7 @@ hl.env("HYPRSHOT", "$HOME/Pictures/Screenshots/")
 --   ┃ ┣┫┣ ┃┃┃┣ ┗┓
 --   ┻ ┛┗┗┛┛ ┗┗┛┗┛
 --  INFO: GTK Settings are saved in seperate file (settings.ini)
-hl.env("GTK_THEME", "WhiteSur-Dark-grey:dark")
+hl.env("GTK_THEME", "WhiteSur-Dark-orange:dark")
 hl.env("QT_STYLE_OVERRIDE", "kvantum")
 hl.env("QT_QPA_PLATFORMTHEME", "kvantum")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")

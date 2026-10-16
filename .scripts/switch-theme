@@ -76,6 +76,7 @@ if [[ ! -f "$WAYBAR_STYLE" ]]; then
     echo "Waybar stylesheet not found at the config directory. Skipping waybar stylesheet update."
 else
     cp "$WAYBAR_STYLE" "$HOME/.config/waybar/style.css"
+    pkill waybar
     echo "Updated waybar stylesheet for $MODE mode."
 fi
 echo ""
@@ -220,6 +221,7 @@ else
 fi
 
 # Send notification
+(waybar > /dev/null 2>&1 &)
 echo ""
 echo "SUCCESS: Switched to $MODE mode."
 notify-send "Theme Switcher" "Successfully switched to $MODE mode." -i "xcolor" 
