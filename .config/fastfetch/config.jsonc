@@ -17,18 +17,19 @@
     },
 	"display": {
 		"percent": { "type": 9 }, // colored percent number
-		"separator": "  "
+		"separator": " "
 	},
 	"modules": [
-        "break",
-        "break",
         { "type": "title", "key": "" },
 		{ "type": "os", "key": "󰌽" },
 		{ "type": "kernel", "key": "󱗜" },
-		{ "type": "shell", "key": "" },
-		{ "type": "packages", "key": "󰏓" },
-		{ "type": "memory", "key": "󰍛" },
-		{ "type": "battery", "key": "󰂄" },
+		{ "type": "wm", "key": "󰨇" },
+		{ "type": "shell", "key": "", "format": "{process-name} ({version} - {pid})" },
+		{ "type": "packages", "key": "󰏓", "combined": true },
+		{ "type": "cpu", "key": "󰍛", "format": "{name}" },
+		{ "type": "memory", "key": "󰘚", "format": "{used} / {total} ({percentage})" },
+		{ "type": "btrfs", "key": "", "format": "{name}: {used} / {total} ({used-percentage})" },
+		{ "type": "battery", "key": "󰂄", "format": "{capacity} ({manufacturer} - {status})" },
 		{ "type": "colors", "symbol": "circle" }
 	]
 }
