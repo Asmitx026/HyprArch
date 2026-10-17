@@ -10,5 +10,4 @@
 - DepartureMono Nerd Font
 - Hobo
 - JetBrainsMono Nerd Font
-- TW Cen MT (for presentations)
 - Waycat (special)
