@@ -1,0 +1,10 @@
+[user]
+	name = Asmitx026
+	email = asmitdaschoudhury@proton.me
+[core]
+	editor = nvim
+	pager = bat
+[merge]
+	tool = vimdiff
+[init]
+	defaultBranch = main

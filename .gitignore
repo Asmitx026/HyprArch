@@ -18,6 +18,10 @@
 !.efibootmgr
 !.config/oh-my-posh/powerlevel10k_lean.omp.json
 
+# Ignore large video files (qy-sddm)
+.config/qy-sddm/themes/redbull-livery/bg.mp4
+.config/qy-sddm/themes/wuwa-x-cpe/bg.mp4
+
 # Also heres the folders/files inside .config which needs to be ignored
 .config/atuin
 .config/BraveSoftware
